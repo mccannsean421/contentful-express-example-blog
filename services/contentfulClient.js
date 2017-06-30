@@ -11,12 +11,12 @@ var util = require('util')
 //Credentials
 var client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
-  space: '',
+  space: 'nckonzuwzubf',
   // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-  accessToken: ''
+  accessToken: '08c680e8b88f4b231dc8393a2332cd1aa217266db64554d95194937ce32017f5'
 });
 
-
+/*
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 client.getContentType('2wKn6yEnZewu2SCCkus4as')
 .then(function (contentType) {
@@ -45,4 +45,6 @@ client.getEntries()
     	console.log(entry.fields.body)
     }
   })
-})
+})*/
+
+exports.client = client
