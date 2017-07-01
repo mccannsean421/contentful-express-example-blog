@@ -9,8 +9,8 @@
     "production": "NODE_EN=production node ./bin/www"
   },
   "config": {
-    "accessToken": "203ea19c3c805ca900cdb79787d83e9f625412c2e84c2503738af26a27375813",
-    "space": "lt3995m00gwu"
+    "accessToken": "",
+    "space": ""
   },
   "dependencies": {
     "body-parser": "~1.15.1",
