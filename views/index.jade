@@ -6,5 +6,6 @@ block content
 
 	div.recent-blogs
 		each blog in blogs
-			span #{blog}
+			h2 #{blog.title}
+			p #{blog.body}
 			br
