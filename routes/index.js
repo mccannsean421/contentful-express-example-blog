@@ -5,26 +5,16 @@ var client = require('../services/contentfulClient').client
 
 var exampleBlogs = [];
 
-/*client.getEntry('4KgYnruiYUeCs6WK4Uw6uc')
-.then(function (entry) {
-  example = entry.fields.title;
-  exampleBody = entry.fields.body;
-  //console.log(example);
-})*/	
-
 client.getEntries()
 .then(function (entries) {
   // log the title for all the entries that have it
   entries.items.forEach(function (entry) {
     if(entry.fields.title) {
-      //console.log(entry.fields.title)
-      //console.log(entry.fields.body)
       var bleg = {
       	title: entry.fields.title,
-      	body: entry.fields.body
+      	shortDescription: entry.fields.shortDescription
       }
       exampleBlogs.push(bleg)
-      console.log(exampleBlogs);
     }
   })
 })

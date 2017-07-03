@@ -13,11 +13,18 @@ var bodyParser = require('body-parser')
 var compression = require('compression')
 var helmet = require('helmet')
 
+
+
 var app = express()
+
+
 
 /****** ROUTING ******/
 var index = require('./routes/index.js') //define route
 app.use('/', index) //apply route
+
+/****** ALLOW STATIC CONTENT *******/
+app.use(express.static(path.join(__dirname, 'public')))
 
 /***** PORT CONFIGURATION *****/
 app.listen(3000, function () {
