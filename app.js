@@ -12,21 +12,21 @@ var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var compression = require('compression')
 var helmet = require('helmet')
-
-
+var index = require('./routes/index');//define route
+// /var about = require('./routes/about'); //define route
 
 var app = express()
 
-
-
 /****** ROUTING ******/
-var index = require('./routes/index.js') //define route
 app.use('/', index) //apply route
+//app.use('/about', about) //apply route
+
+
 
 /****** ALLOW STATIC CONTENT *******/
 app.use(express.static(path.join(__dirname, 'public')))
 
 /***** PORT CONFIGURATION *****/
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('Listening on port 3000!')
 })

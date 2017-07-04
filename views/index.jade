@@ -6,6 +6,7 @@ block content
 
 	div.recent-blogs
 		each blog in blogs
-			h2 #{blog.title}
+			h2 #{blog.title} 
+			span #{blog.author.name}
 			p #{blog.shortDescription}
 			br

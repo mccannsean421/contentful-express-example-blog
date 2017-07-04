@@ -12,6 +12,7 @@ client.getEntries()
     if(entry.fields.title) {
       var bleg = {
       	title: entry.fields.title,
+        author: entry.fields.author,
       	shortDescription: entry.fields.shortDescription
       }
       exampleBlogs.push(bleg)
@@ -25,5 +26,10 @@ router.get('/', function (req, res, next) {
 		'blogs': exampleBlogs,
 	});
 })
+
+router.get('/about', function (req, res) {
+  res.send('<h1> About page </h1>');
+})
+
 
 module.exports = router
