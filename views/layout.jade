@@ -4,14 +4,18 @@ html
 		title= 'Hello'
 		meta(name='description', content='')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		link(rel='stylesheet', href='assets/styles.css')
+		link(rel='stylesheet', href='assets/css/bundle.css')
 
 	body
 		div.nav
-			span Navigation
-			ul
-				li
-					a(href="/about" data-nav) About
+			div.nav-logo
+				span Navigation
+			div.nav-menu
+				ul
+					li
+						a(href="/about" data-nav) About
+					li
+						a(href="/blog-archive") Blogs
 		block content
 		footer
 			span This is the footer

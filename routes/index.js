@@ -28,7 +28,13 @@ router.get('/', function (req, res, next) {
 })
 
 router.get('/about', function (req, res) {
-  res.send('<h1> About page </h1>');
+  //res.send('<h1> About page </h1>');
+  res.render('./../views/about.jade');
+})
+
+router.get('/blog-archive', function (req, res) {
+  //res.send('<h1> About page </h1>');
+  res.render('./../views/blogs.jade');
 })
 
 
