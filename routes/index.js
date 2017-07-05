@@ -4,6 +4,7 @@ var index = require('../services/index')//require corresponding service
 var client = require('../services/contentfulClient').client
 
 var exampleBlogs = [];
+var blogPaths = [];
 
 client.getEntries()
 .then(function (entries) {
@@ -16,6 +17,8 @@ client.getEntries()
       	shortDescription: entry.fields.shortDescription
       }
       exampleBlogs.push(bleg)
+      blogPaths.push(bleg.title.toLowerCase())
+      console.log(blogPaths);
     }
   })
 })
