@@ -14,11 +14,20 @@ client.getEntries()
       var bleg = {
       	title: entry.fields.title,
         author: entry.fields.author,
-      	shortDescription: entry.fields.shortDescription
+        body: entry.fields.body,
+      	shortDescription: entry.fields.shortDescription,
+        blogPath: entry.fields.title.replace(/\s+/g, '-').toLowerCase() 
       }
       exampleBlogs.push(bleg)
-      blogPaths.push(bleg.title.toLowerCase())
-      console.log(blogPaths);
+      //bleg.title.replace(/\s+/g, '-').toLowerCase()) //adjust strings and add to paths
+      console.log(bleg.blogPath);
+      router.get('/' + bleg.blogPath, function (req, res) {
+        res.render('./../views/blogPost.jade', {
+          'title': bleg.title,
+          'currentBlog': bleg.title,
+          'blogBody': bleg.body
+        });
+      })
     }
   })
 })
@@ -31,14 +40,23 @@ router.get('/', function (req, res, next) {
 })
 
 router.get('/about', function (req, res) {
-  //res.send('<h1> About page </h1>');
   res.render('./../views/about.jade');
 })
 
 router.get('/blog-archive', function (req, res) {
-  //res.send('<h1> About page </h1>');
   res.render('./../views/blogs.jade');
 })
+
+/*router.get('/blog-post', function (req, res) {
+  res.render('./../views/blogPost.jade', {
+    'currentBlog': 'Bro'
+  });
+})*/
+
+//Generate router views
+for(var i = 0; i < blogPaths.length; i++) {
+  console.log('Path: ' + blogPaths[i])
+}
 
 
 module.exports = router
