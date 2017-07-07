@@ -22,35 +22,4 @@ client.sync({initial: true}).then((response) => {
   console.log(response.nextSyncToken)
 })
 
-/*
-// This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
-client.getContentType('2wKn6yEnZewu2SCCkus4as')
-.then(function (contentType) {
-  //console.log(util.inspect(contentType, {depth: null}))
-})
-
-//return a single a entry
-client.getEntry('4KgYnruiYUeCs6WK4Uw6uc')
-.then(function (entry) {
-  // logs the entry metadata
-  //console.log(entry.sys)
-
-  // logs the field with ID title
-  //console.log(entry.fields.title)
-})
-
-//Get ALL ENTRIES!!!!!
-client.getEntries()
-.then(function (entries) {
-  // log the title for all the entries that have it
-  entries.items.forEach(function (entry) {
-    if(entry.fields.title) {
-      console.log(entry.fields.title)
-    }
-    if(entry.fields.body) {
-    	console.log(entry.fields.body)
-    }
-  })
-})*/
-
 exports.client = client

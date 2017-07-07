@@ -1,12 +1,21 @@
 extends layout
 
 block content
-	div.header
-		h1 Homepage
+	div.content-container
+		div.intro-banner
+			div.banner-pic-container
 
-	div.recent-blogs
-		each blog in blogs
-			h2 #{blog.title} 
-			span #{blog.author.name}
-			p #{blog.shortDescription}
-			br
+			div.banner-info
+				h1 Hey There
+				p
+
+		div.recent-blogs
+			each blog in blogs
+				div.blogPreview
+					div.previewImg
+						picture
+					div.blogText
+						h2 #{blog.title} 
+						span #{blog.author.name}
+						p #{blog.shortDescription}
+						br
