@@ -42,7 +42,7 @@ router.get('/', function (req, res, next) {
 router.get('/about', function (req, res) {
   client.getEntry('5wcUDTrUoEowEAA6WsG2iM')
     .then(function (entry) {
-      
+      console.log('photo:' + entry.fields.profilePhoto);
       //retrieve photo
       var author = {
         authorName: entry.fields.name
