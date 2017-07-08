@@ -1,5 +1,8 @@
 extends layout
 
 block content
-	div.header
-		h1 About this Blog
+	div.profileInfo
+		h1 About
+		h2 About the author
+		span #{authorName}
+		img(src=authorProfilePicSrc).profilePic
