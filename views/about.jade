@@ -2,7 +2,9 @@ extends layout
 
 block content
 	div.profileInfo
-		h1 About
-		h2 About the author
-		span #{authorName}
-		img(src=authorProfilePicSrc).profilePic
+		div.imgContainer
+			img(src=authorProfilePicSrc).profilePic
+		div.basicInfo
+			h2 #{authorName}
+			p
+				'I am a developer'

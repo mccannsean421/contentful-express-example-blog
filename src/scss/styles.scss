@@ -71,15 +71,24 @@ body {
 *
 ***/
 .profileInfo {
-	.profilePic {
-		height: auto;
-		width: 4em;
+	.imgContainer {
+		display: inline-block;
+		.profilePic {
+			height: auto;
+			width: 4em;
+		}
+	}
+	.basicInfo {
+		display: inline-block;
 	}
 }
 
 footer {
-	position: absolute;
+	position: relative;
     bottom: 0;
     text-align: center;
     width: 100%;
+ 	background: #303030;
+    color: #fff;
+    padding: 1em;
 }
