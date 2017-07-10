@@ -9,17 +9,8 @@ html
 		link(rel='stylesheet', href='assets/css/bundle.min.css')
 
 	body
-		div.nav
-			div.nav-logo
-				span Contentful Blog
-			div.nav-menu
-				ul
-					li
-						a(href="/about" data-nav) About
-					li
-						a(href="/blog-archive") Blogs
-					li 
-						a(href="/contact") Contact
+		include ./includes/navigation
+
 		block content
 		
 		include ./includes/footer

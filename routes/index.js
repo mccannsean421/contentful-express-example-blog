@@ -19,12 +19,14 @@ client.getEntries()
         blogPath: entry.fields.title.replace(/\s+/g, '-').toLowerCase() 
       }
       exampleBlogs.push(bleg)
-      //console.log(bleg.blogPath);
+      console.log(bleg.author);
       router.get('/' + bleg.blogPath, function (req, res) {
         res.render('./../views/blogPost.jade', {
           'title': bleg.title,
           'currentBlog': bleg.title,
-          'blogBody': bleg.body
+          'blogBody': bleg.body,
+          'blogPath': bleg.blogPath,
+          'blogAuthor': bleg.author
         });
       })
     }

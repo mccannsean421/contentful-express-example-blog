@@ -1,6 +1,8 @@
 extends layout
 
 block content
-	div.heading
-		h1 #{currentBlog}
-		p #{blogBody}
+	div.content-container
+		h1.blog-heading #{currentBlog}
+		span #{blogAuthor}
+		
+		p.blog-body #{blogBody}
