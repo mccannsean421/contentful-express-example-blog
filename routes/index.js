@@ -6,27 +6,30 @@ var client = require('../services/contentfulClient').client
 var exampleBlogs = [];
 var blogPaths = [];
 
-client.getEntries()
+client.getEntries({order: '-sys.createdAt'})
 .then(function (entries) {
   // log the title for all the entries that have it
   entries.items.forEach(function (entry) {
     if(entry.fields.title) {
+      console.log(entry.fields.date)
       var bleg = {
-      	title: entry.fields.title,
+        title: entry.fields.title,
         author: entry.fields.author,
         body: entry.fields.body,
-      	shortDescription: entry.fields.shortDescription,
-        blogPath: entry.fields.title.replace(/\s+/g, '-').toLowerCase() 
+        shortDescription: entry.fields.shortDescription,
+        blogPath: entry.fields.title.replace(/\s+/g, '-').toLowerCase(),
+        postDate: entry.fields.date
       }
       exampleBlogs.push(bleg)
-      console.log(bleg.author);
+      //console.log(bleg.author);
       router.get('/' + bleg.blogPath, function (req, res) {
         res.render('./../views/blogPost.jade', {
           'title': bleg.title,
           'currentBlog': bleg.title,
           'blogBody': bleg.body,
           'blogPath': bleg.blogPath,
-          'blogAuthor': bleg.author
+          'blogAuthor': bleg.author,
+          'blogPublishDate': bleg.postDate
         });
       })
     }
@@ -35,9 +38,9 @@ client.getEntries()
 
 /**** INDEX ****/
 router.get('/', function (req, res, next) {
-	res.render('./../views/index.jade', {
-		'blogs': exampleBlogs,
-	});
+  res.render('./../views/index.jade', {
+    'blogs': exampleBlogs,
+  });
 })
 
 /**** ABOUT ****/
