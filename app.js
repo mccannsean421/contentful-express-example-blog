@@ -13,7 +13,6 @@ var bodyParser = require('body-parser')
 var compression = require('compression')
 var helmet = require('helmet')
 var index = require('./routes/index');//define route
-// /var about = require('./routes/about'); //define route
 
 var app = express()
 
