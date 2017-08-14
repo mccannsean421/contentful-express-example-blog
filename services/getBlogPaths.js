@@ -1,29 +1,19 @@
 var client = require('./contentfulClient').client
 
-var blogs = [];
+var blogPaths = [];
 
 client.getEntries({order: '-sys.createdAt'})
 	.then(function (entries) {
 	// log the title for all the entries that have it
 	entries.items.forEach(function (entry) {
 	  if(entry.fields.title) {
-	    
 	    var blogPath = '/'+entry.fields.slug;
-	    var blogObj = {
-	      title: entry.fields.title,
-	      slug: entry.fields.slug,
-	      path: blogPath
-	    }
-
-	    blogs.push(blogObj);
-	    //console.log(blogs);
+	    blogPaths.push(blogPath);
 	  }
 	})
 })
 
-
-
 //Make available for routes
 module.exports = {
-	blogs
+	blogPaths
 }

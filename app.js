@@ -13,14 +13,12 @@ var bodyParser = require('body-parser')
 var compression = require('compression')
 var helmet = require('helmet')
 var index = require('./routes/index');//define route
+var blogs = require('./routes/blogs');//define route
 
 var app = express()
 
 /****** ROUTING ******/
 app.use('/', index) //apply route
-//app.use('/about', about) //apply route
-
-
 
 /****** ALLOW STATIC CONTENT *******/
 app.use(express.static(path.join(__dirname, 'public')))
