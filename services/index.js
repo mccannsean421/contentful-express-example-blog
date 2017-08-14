@@ -16,12 +16,9 @@ client.getEntries({order: '-sys.createdAt'})
 	    }
 
 	    blogs.push(blogObj);
-	    //console.log(blogs);
 	  }
 	})
 })
-
-
 
 //Make available for routes
 module.exports = {
