@@ -1,4 +1,5 @@
 var client = require('./contentfulClient').client
+var marked = require('marked');
 
 var blogs = [];
 var blog = {
@@ -20,7 +21,6 @@ client.getEntries({order: '-sys.createdAt'})
 	      path: blogPath,
 	      body: entry.fields.body
 	    }
-        console.log('info: ' + blogObj.body);
 	    blogs.push(blogObj);
 	  }
 	})
@@ -30,7 +30,8 @@ function getBlog(blogPath) {
 	for(var i = 0; i < blogs.length; i++) {	
 		if(blogs[i].path == blogPath ) {
 			blog.title = blogs[i].title;
-			blog.body = blogs[i].body;
+			blog.body = marked(blogs[i].body);
+			console.log(marked(blog.body));
 		}
 	}
 }
