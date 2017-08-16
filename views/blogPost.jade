@@ -3,5 +3,6 @@ extends layout
 block content
 	div.content-container
 		h1.blog-heading #{blog.title} 
-
+		span Posted: #{blog.date}
+		span By #{blog.author}
 		div !{blog.body}

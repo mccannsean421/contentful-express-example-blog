@@ -4,7 +4,9 @@ var marked = require('marked');
 var blogs = [];
 var blog = {
 	title: 'testing title',
-	body: 'body of blog'
+	body: 'body of blog',
+	date: 'date',
+	author: 'author'
 }
 
 
@@ -19,7 +21,9 @@ client.getEntries({order: '-sys.createdAt'})
 	      title: entry.fields.title,
 	      slug: entry.fields.slug,
 	      path: blogPath,
-	      body: entry.fields.body
+	      body: entry.fields.body,
+	      date: entry.fields.date,
+	      author: entry.fields.author[0].name
 	    }
 	    blogs.push(blogObj);
 	  }
@@ -30,8 +34,10 @@ function getBlog(blogPath) {
 	for(var i = 0; i < blogs.length; i++) {	
 		if(blogs[i].path == blogPath ) {
 			blog.title = blogs[i].title;
-			blog.body = marked(blogs[i].body);
-			console.log(blog.body);
+			blog.body = marked(blogs[i].body); //parse contentful markdown
+			blog.date = blogs[i].date;
+			blog.author = blogs[i].author;
+			console.log(blog.author);
 		}
 	}
 }
