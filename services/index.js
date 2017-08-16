@@ -31,7 +31,7 @@ function getBlog(blogPath) {
 		if(blogs[i].path == blogPath ) {
 			blog.title = blogs[i].title;
 			blog.body = marked(blogs[i].body);
-			console.log(marked(blog.body));
+			console.log(blog.body);
 		}
 	}
 }
