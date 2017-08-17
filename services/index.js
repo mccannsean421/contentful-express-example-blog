@@ -9,13 +9,27 @@ var blog = {
 	author: 'author'
 }
 
+/**** GET BLOG INFO ****/
+var blogAuthor = '';
 
 client.getEntries({order: '-sys.createdAt'})
 	.then(function (entries) {
 	// log the title for all the entries that have it
 	entries.items.forEach(function (entry) {
+	  
+	  if(entry.fields.name) {
+	  	blogAuthor = entry.fields.name;
+	  	//console.log(blogAuthor);
+	  }
+	})
+})
+
+/**** GET BLOG INFO ****/
+client.getEntries({order: '-sys.createdAt'})
+	.then(function (entries) {
+	// log the title for all the entries that have it
+	entries.items.forEach(function (entry) {
 	  if(entry.fields.title) {
-	    
 	    var blogPath = '/'+entry.fields.slug;
 	    var blogObj = {
 	      title: entry.fields.title,
@@ -23,9 +37,11 @@ client.getEntries({order: '-sys.createdAt'})
 	      path: blogPath,
 	      body: entry.fields.body,
 	      date: entry.fields.date,
-	      author: entry.fields.author[0].name
+	      author: blogAuthor
 	    }
+	    
 	    blogs.push(blogObj);
+	    console.log(blogAuthor);
 	  }
 	})
 })
@@ -37,7 +53,7 @@ function getBlog(blogPath) {
 			blog.body = marked(blogs[i].body); //parse contentful markdown
 			blog.date = blogs[i].date;
 			blog.author = blogs[i].author;
-			console.log(blog.author);
+			//console.log(blog.author);
 		}
 	}
 }
