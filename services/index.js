@@ -1,7 +1,8 @@
 var client = require('./contentfulClient').client
-var marked = require('marked');
+var marked = require('marked'); //parsing library
 
 var blogs = [];
+
 var blog = {
 	title: 'testing title',
 	body: 'body of blog',
@@ -19,7 +20,6 @@ client.getEntries({order: '-sys.createdAt'})
 	  
 	  if(entry.fields.name) {
 	  	blogAuthor = entry.fields.name;
-	  	//console.log(blogAuthor);
 	  }
 	})
 })
@@ -57,6 +57,8 @@ function getBlog(blogPath) {
 		}
 	}
 }
+
+
 
 
 //Make available for routes
