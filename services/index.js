@@ -58,9 +58,6 @@ function getBlog(blogPath) {
 	}
 }
 
-
-
-
 //Make available for routes
 module.exports = {
 	blogs,

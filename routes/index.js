@@ -4,7 +4,8 @@ var blogs = require('../services/index').blogs//require corresponding service
 var index = require('../services/index')//require corresponding service
 var blog = require('../services/index').blog//require corresponding service
 var blogPaths = require('../services/getBlogPaths').blogPaths
-var staticPagePaths = require('../services/staticPagePaths').staticPagePaths
+var static = require('../services/staticPages')
+var staticPage = require('../services/staticPages').staticPage
 var marked = require('marked');
 //Write service to get individual blog info
 
@@ -13,6 +14,14 @@ var marked = require('marked');
 router.get('/', function (req, res, next) {
   res.render('./../views/index.jade', {
     'blogs': blogs,
+  });
+});
+
+/**** ADD STATIC PAGE ROUTES ****/
+router.get('/about', function (req, res, next) {
+  static.getAboutPage();
+  res.render('./../views/about.jade', {
+  	'staticPage': staticPage
   });
 });
 
