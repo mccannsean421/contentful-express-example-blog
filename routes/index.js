@@ -9,7 +9,6 @@ var staticPage = require('../services/staticPages').staticPage
 var marked = require('marked');
 //Write service to get individual blog info
 
-
 /**** INDEX ****/
 router.get('/', function (req, res, next) {
   res.render('./../views/index.jade', {
@@ -25,13 +24,13 @@ router.get('/about', function (req, res, next) {
   });
 });
 
-/**** DYNAMIC ROUTES ****/
+/**** DYNAMIC ROUTES ****
 router.get(blogPaths, function (req, res, next) {
   index.getBlog(req.url);
   res.render('./../views/blogPost.jade', {
   	'blog': blog
   });
-});
+});*/
 
 
 
