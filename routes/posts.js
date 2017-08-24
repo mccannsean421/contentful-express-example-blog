@@ -4,9 +4,6 @@ var blogs = require('../services/index').blogs//require corresponding service
 var index = require('../services/index')//require corresponding service
 var blog = require('../services/index').blog//require corresponding service
 var blogPaths = require('../services/getBlogPaths').blogPaths
-var static = require('../services/staticPages')
-var staticPage = require('../services/staticPages').staticPage
-var marked = require('marked');
 
 router.get(blogPaths, function (req, res, next) {
 	index.getBlog(req.url);

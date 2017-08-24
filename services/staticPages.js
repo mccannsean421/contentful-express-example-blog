@@ -1,5 +1,6 @@
 var client = require('./contentfulClient').client
 
+//Object for static page content
 var staticPage = {
 	title: '',
 	content: ''
