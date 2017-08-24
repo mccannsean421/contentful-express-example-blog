@@ -14,13 +14,11 @@ var compression = require('compression')
 var helmet = require('helmet')
 var index = require('./routes/index');//define route
 var posts = require('./routes/posts');//define route
-var about = require('./routes/about');//define route
 
 var app = express()
 
 /****** ROUTING ******/
 app.use('/', index); //apply route
-app.use('/about', about); //apply route
 app.use('/post', posts); //apply route
 
 

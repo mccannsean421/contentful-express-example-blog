@@ -4,8 +4,8 @@ block head
 	title #{blog.title}
 
 block content
-	div.content-container
+	div.blog-container.col-sm-8.col-sm-offset-2
 		h1.blog-heading #{blog.title} 
 		span Posted: #{blog.date}
 		span By #{blog.author}
-		div !{blog.body}
+		div.blog-body !{blog.body}

@@ -1,3 +1,9 @@
+/***
+
+	RETRIEVE CONTENT FOR STATIC PAGES
+
+***/
+
 var client = require('./contentfulClient').client
 
 //Object for static page content
@@ -14,7 +20,6 @@ function getAboutPage() {
 	  // logs the field with ID title
 	  staticPage.title = entry.fields.pageTitle; 
 	  staticPage.content = entry.fields.pageContent; 
-	  console.log(staticPage.content);
 	  return staticPage.title;
 	})
 }

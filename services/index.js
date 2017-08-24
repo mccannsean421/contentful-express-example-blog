@@ -39,9 +39,7 @@ client.getEntries({order: '-sys.createdAt'})
 	      date: entry.fields.date,
 	      author: blogAuthor
 	    }
-	    
 	    blogs.push(blogObj);
-	    console.log(blogAuthor);
 	  }
 	})
 })
@@ -53,7 +51,6 @@ function getBlog(blogPath) {
 			blog.body = marked(blogs[i].body); //parse contentful markdown
 			blog.date = blogs[i].date;
 			blog.author = blogs[i].author;
-			//console.log(blog.author);
 		}
 	}
 }

@@ -1,19 +1,14 @@
 extends layout
 
+block head
+	title Example blog built using Contentful and Express.js| Cormac McCann
+
 block content
-	div.content-container
-		div.intro-banner
-			div.banner-pic-container
-
-			div.banner-info
-				h1 Welcome To My Blog
-				p
-
-		div.recent-blogs
-			each blog in blogs
-				div.blogPreview
-					div.previewImg
-						picture
-					div.blogText
-						h2 #{blog.title} 
-						a(href='/post/'+blog.slug) Read More
+	div.recent-blogs.col-sm-8.col-sm-offset-2
+		each blog in blogs
+			div.blogPreview
+				div.previewImg
+					picture
+				div.blogText
+					h2 #{blog.title} 
+					a(href='/post/'+blog.slug) Read More

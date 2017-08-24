@@ -1,3 +1,10 @@
+/***
+	
+	COLLECTS PATHS FOR PUBLISHED BLOGS
+
+***/
+
+
 var client = require('./contentfulClient').client
 
 var blogPaths = [];
