@@ -4,7 +4,6 @@
 
 ***/
 
-
 var express = require('express')
 var router = express.Router()
 var blogs = require('../services/index').blogs//require corresponding service

@@ -3,6 +3,10 @@ extends layout
 block head
 	title Example blog built using Contentful and Express.js| Cormac McCann
 
+block banner
+	- var bannerTitle = 'Welcome to this blog example'
+	include ./includes/banner
+
 block content
 	div.recent-blogs.col-sm-8.col-sm-offset-2
 		each blog in blogs

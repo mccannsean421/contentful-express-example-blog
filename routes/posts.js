@@ -5,8 +5,9 @@ var index = require('../services/index')//require corresponding service
 var blog = require('../services/index').blog//require corresponding service
 var blogPaths = require('../services/getBlogPaths').blogPaths
 
-router.get(blogPaths, function (req, res, next) {
-	index.getBlog(req.url);
+/* blogPaths is an array containing the urls for all published blogs */
+router.get(blogPaths, function (req, res, next) { 
+  index.getBlog(req.url); // Get the blog content associated with the URL
   res.render('./../views/blogPost.jade', {
   	'blog': blog
   });

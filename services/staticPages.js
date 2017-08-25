@@ -14,7 +14,6 @@ var staticPage = {
 
 /****** Static Page Paths *****/
 function getAboutPage() {
-	console.log('get about page');
 	client.getEntry('MlsiDTASmycAgQYqYyMq0')
 	.then(function (entry) {
 	  // logs the field with ID title

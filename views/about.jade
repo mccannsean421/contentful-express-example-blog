@@ -1,5 +1,9 @@
 extends layout
 
+block banner
+	- var bannerTitle = staticPage.title
+	include ./includes/banner
+
 block content
 	div.container-fluid
 		h1 #{staticPage.title}
