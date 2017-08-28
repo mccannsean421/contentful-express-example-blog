@@ -10,34 +10,44 @@ body {
 
 /*** NAVIGATION ***/
 .nav {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	width: 100%;
-	a {
-		color: $navColor;
-	}
-	.nav-title {
-		display: inline-block;
-		color: $navColor;
-	}
-	ul {
-		list-style-type: none;
-		display: inline-block;
-		float: right;
-		li {
-		    display: inline;
-		    padding: 1.5em;
-		    text-transform: uppercase;
-		    font-size: 0.9em;
-		    font-weight: 800;
+	.nav-container {
+		position: relative;
+    	top: 60%;
+    	padding-top: 1em;
+    	padding-bottom: 1em;
+		a {
+			color: $navColor;
 		}
+		.nav-title {
+			display: inline-block;
+			color: $navColor;
+		    text-transform: uppercase;
+		    margin-left: 2em;
+		    font-weight: 900;
+		    font-size: 1.5em;
+		}
+		ul {
+			list-style-type: none;
+			display: inline-block;
+			float: right;
+			li {
+			    display: inline;
+			    padding: 1.5em;
+			    text-transform: uppercase;
+			    font-size: 1.5em;
+			    font-weight: 800;
+			}
+		}	
 	}
+
 }
 
 /*** BANNER ***/
 .banner {
 	height: 20em;
-	width: 100%;
 	position: relative;
 	background: url('../img/snow.jpg');
     background-repeat: no-repeat;
@@ -51,6 +61,7 @@ body {
     	position: relative;
     	margin: 0 auto;
     	top: 50%;
+    	font-size: 4em;
     }
 }
 

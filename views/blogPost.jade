@@ -1,7 +1,7 @@
 extends layout
 
 block head
-	title #{blog.title}
+	title #{blog.title} | Cormac McCann
 
 block banner
 	- var bannerTitle = blog.title
@@ -9,6 +9,8 @@ block banner
 
 block content
 	div.blog-container.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2
-		span Posted: #{blog.date}
-		span By #{blog.author}
+		
 		div.blog-body !{blog.body}
+		span By: #{blog.author}
+		br
+		span Posted: #{blog.date}

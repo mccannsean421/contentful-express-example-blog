@@ -9,11 +9,12 @@ html
 		link(rel='stylesheet', href='/assets/css/bundle.min.css')
 
 	body
-		include ./includes/navigation
+		div.container-fluid
+			include ./includes/navigation
 
-		block banner
+			block banner
 
-		div.content-container.row
-			block content
-		
-		include ./includes/footer
+			div.content-container.row
+				block content
+			
+			include ./includes/footer

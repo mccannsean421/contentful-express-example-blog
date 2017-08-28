@@ -21,7 +21,6 @@ var app = express()
 app.use('/', index); //apply route
 app.use('/post', posts); //apply route
 
-
 /****** ALLOW STATIC CONTENT *******/
 app.use(express.static(path.join(__dirname, 'public')))
 
